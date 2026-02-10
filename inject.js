@@ -1,4 +1,10 @@
 (() => {
+    const deny = async() => {
+        throw new DOMException (
+            "Operation is not allowed",
+            "NotAllowedError"
+        );
+    }
     if (!navigator.credentials) return; // check for the existence of the credentials API before attempting to override it
     
     const originalCreate = navigator.credentials.create;
